@@ -65,4 +65,19 @@ class Environment
 //        $_ENV[$name] = $value;
 //        $_SERVER[$name] = $value;
     }
+
+    /**
+     * Get an environment variable or throw error
+     * @param string $name
+     * @return string
+     * @throws EnvironmentException
+     */
+    public static function getOrThrow(string $name): string
+    {
+        $variable = getenv($name);
+        if ($variable === false) {
+            throw new EnvironmentException(".env variable \"$name\" not found", 500);
+        }
+        return $variable;
+    }
 }
