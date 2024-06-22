@@ -41,6 +41,19 @@ class Environment
     }
 
     /**
+     * Loads if not PREVENT_ENV_FILE_LOADING (if env is already loaded)
+     * @param string $filePath
+     * @return void
+     * @throws EnvironmentException
+     */
+    public static function loadIfNotPrevented(string $filePath): void
+    {
+        if (env('PREVENT_ENV_FILE_LOADING') !== 'true') {
+            self::loadFromFile($filePath);
+        }
+    }
+
+    /**
      * Put data to the environment
      * @param string $name
      * @param string $value
