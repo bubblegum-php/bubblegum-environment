@@ -1,0 +1,24 @@
+{
+    "name": "bubblegum-php/bubblegum-environment",
+    "description": "Environment manager module for BUBBLEGUM.",
+    "keywords": ["bubblegum", "bubblegum-environment", "environment"],
+    "homepage": "https://github.com/bubblegum-php/bubblegum-environment",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "LankryF",
+            "email": "lankrf@gmail.com"
+        }
+    ],
+    "support": {
+        "source": "https://github.com/bubblegum-php/bubblegum-environment"
+    },
+    "require": {
+        "php": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Bubblegum\\": "src/"
+        }
+    }
+}
